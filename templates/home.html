@@ -1,0 +1,573 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dublin Dentist Clinic</title>
+    <link rel="icon" type="image/jpeg" href="{% static 'images/favicon.jpg' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="{% static 'images/favicon.jpg' %}" alt="Logo" class="logo-icon">
+                <h1>Dublin Dentist Clinic</h1>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#">Home</a></li>
+                <li><a href="#services">Pricing</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#location">Location</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="{% url 'appointments:booking' %}" class="btn-booking">Book Appointment</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Dublin Dentist Clinic</h1>
+            <p>Your smile is our priority. Book your appointment today and experience quality dental care.</p>
+            <a href="{% url 'appointments:booking' %}" class="btn-hero">Book Appointment</a>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <h2>Our Treatments & Pricing</h2>
+
+        <div class="services-container">
+            <button class="category-toggle-btn" id="categoryToggle">Show Categories</button>
+            <div class="services-nav">
+                <a href="#exam-xray">Examination & X-Rays</a>
+                <a href="#hygiene">Dental Hygiene</a>
+                <a href="#fillings">Fillings/Restorations</a>
+                <a href="#root-canal">Root Canal</a>
+                <a href="#extractions">Extractions</a>
+                <a href="#implants">Dental Implants</a>
+                <a href="#crowns">Crowns/Bridges/Veneers</a>
+                <a href="#dentures">Dentures</a>
+                <a href="#orthodontics">Orthodontics</a>
+                <a href="#pediatric">Pediatric</a>
+            </div>
+
+            <div class="services-content">
+                <div class="service-category" id="exam-xray">
+            <h3 class="category-title">Examination & X-Rays</h3>
+            <div class="price-grid">
+                <div class="price-item">
+                    <div class="service-name">Simple Examination</div>
+                    <div class="service-price">€30</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Examination + Consultation</div>
+                    <div class="service-price">€50</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Emergency Exam</div>
+                    <div class="service-price">€60</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Small X-Rays</div>
+                    <div class="service-price">€30</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">OPG X-Ray (Panoramic x-ray)</div>
+                    <div class="service-price">€50</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">CBCT Scan</div>
+                    <div class="service-price">€200</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Prescription</div>
+                    <div class="service-price">€30</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-category" id="hygiene">
+            <h3 class="category-title">Dental Hygiene</h3>
+            <div class="price-grid">
+                <div class="price-item">
+                    <div class="service-name">Cleaning & Polishing with PRSI</div>
+                    <div class="service-price">€15</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Cleaning & Polishing</div>
+                    <div class="service-price">€90</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Air Sanding & Polishing</div>
+                    <div class="service-price">€30</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">
+                        Deep Cleaning with Curettage (Root Planning)
+                        <span class="service-note">in total / per quadrant</span>
+                    </div>
+                    <div class="service-price">€320 / €80</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">
+                        Teeth Whitening (In-Clinic/Home Kit)
+                        <span class="service-note">(Gel €30)</span>
+                    </div>
+                    <div class="service-price">€250</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-category" id="fillings">
+            <h3 class="category-title">Fillings/Restorations</h3>
+
+            <div class="price-grid">
+                <div class="price-item service-group-header">
+                    <div class="service-name"><strong>White Composite Filling</strong></div>
+                    <div class="service-price"></div>
+                </div>
+                <div class="price-item indented">
+                    <div class="service-name">Small Filling Without Decay</div>
+                    <div class="service-price">€90–€100</div>
+                </div>
+                <div class="price-item indented">
+                    <div class="service-name">Small Filling With Decay</div>
+                    <div class="service-price">€110–€120</div>
+                </div>
+                <div class="price-item indented">
+                    <div class="service-name">Medium Size</div>
+                    <div class="service-price">€130–€140</div>
+                </div>
+                <div class="price-item indented">
+                    <div class="service-name">Large Size</div>
+                    <div class="service-price">From €150</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">ICON Treatment</div>
+                    <div class="service-price">€180–€200</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">MTA</div>
+                    <div class="service-price">€80</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">
+                        Tooth Reconstruction with Post/Pin
+                        <span class="service-note">Additional</span>
+                    </div>
+                    <div class="service-price">€100</div>
+                </div>
+            </div>
+
+            <div class="price-grid">
+                <div class="price-item">
+                    <div class="service-name">Temporary Filling</div>
+                    <div class="service-price">€60</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Zinc Oxide Eugenol Filling</div>
+                    <div class="service-price">€70</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Composite Restoration Inlay/Onlay</div>
+                    <div class="service-price">€300–€400</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Ceramic Restoration Inlay/Onlay</div>
+                    <div class="service-price">€400–€500</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Aesthetic Composite Restorations for Front Teeth</div>
+                    <div class="service-price">€250</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Fuji (Silver) Filling</div>
+                    <div class="service-price">€80–€120</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Composite Bonding</div>
+                    <div class="service-price">€190–€250</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-category" id="root-canal">
+            <h3 class="category-title">Root Canal Treatment</h3>
+            <div class="price-grid">
+                <div class="price-item">
+                    <div class="service-name">Front Tooth</div>
+                    <div class="service-price">From €490</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Premolar</div>
+                    <div class="service-price">From €590</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Molar</div>
+                    <div class="service-price">From €790</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">
+                        Root Canal Treatment Dressings
+                        <span class="service-note">Additional Cost: Extended Visits to Treat Large Infections</span>
+                    </div>
+                    <div class="service-price">€60</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Re-Treatment Root Canal</div>
+                    <div class="service-price">From €790</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Treatment with Specialist</div>
+                    <div class="service-price">€150<span class="service-note"> Additional</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-category" id="extractions">
+            <h3 class="category-title">Extractions</h3>
+            <div class="price-grid">
+                <div class="price-item">
+                    <div class="service-name">Simple Extraction</div>
+                    <div class="service-price">€120</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Surgical Extraction</div>
+                    <div class="service-price">From €200</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Wisdom Tooth Extraction (Non-Surgical)</div>
+                    <div class="service-price">€200 Upper / From €250 Lower</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Wisdom Tooth Extraction (Surgical)</div>
+                    <div class="service-price">€300–€450</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-category" id="implants">
+            <h3 class="category-title">Dental Implants</h3>
+            <div class="price-grid">
+                <div class="price-item">
+                    <div class="service-name">Consultation with the Oral Surgeon</div>
+                    <div class="service-price">€50</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Dental Implant Straumann</div>
+                    <div class="service-price">€950</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Dental Implant Neodent</div>
+                    <div class="service-price">€850</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Crown on Implant</div>
+                    <div class="service-price">€950</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Bone Augmentation + Membrane</div>
+                    <div class="service-price">€600</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Sinus Lift</div>
+                    <div class="service-price">€600</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Gingivectomy (Each Tooth)</div>
+                    <div class="service-price">€40–€60</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-category" id="crowns">
+            <h3 class="category-title">Crowns / Bridges / Veneers</h3>
+            <div class="price-grid">
+                <div class="price-item">
+                    <div class="service-name">Metal Porcelain Crown (PFM) / overlay</div>
+                    <div class="service-price">€700</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Full Ceramic Crown / overlay</div>
+                    <div class="service-price">€750</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Zirconium Crown / overlay</div>
+                    <div class="service-price">€800</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Temporary Crown</div>
+                    <div class="service-price">€80</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Post and Core</div>
+                    <div class="service-price">€250</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Crown / Bridge Cementation</div>
+                    <div class="service-price">€100–€120</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Removal Crown / Bridge</div>
+                    <div class="service-price">From €60</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Full Porcelain Veneer (Per Unit)</div>
+                    <div class="service-price">From €650</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Metal / Ceramic bridge (Each)</div>
+                    <div class="service-price">From €550</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Zirconium Bridge (Each)</div>
+                    <div class="service-price">€700</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Gold Crown / Inlay/overlay</div>
+                    <div class="service-price">€1100–€1200</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-category" id="dentures">
+            <h3 class="category-title">Dentures</h3>
+            <div class="price-grid">
+                <div class="price-item">
+                    <div class="service-name">Acrylic Partial Denture (Upper/Lower)</div>
+                    <div class="service-price">From €700</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Acrylic Complete Denture (Upper/Lower)</div>
+                    <div class="service-price">From €950</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Metal Chrome Denture (Cobalt)</div>
+                    <div class="service-price">From €1250</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Denture Repairs / With Impressions</div>
+                    <div class="service-price">From €100–€200</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Add 1 Tooth to the Existing Denture</div>
+                    <div class="service-price">€120</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Reline Denture (Only Full Denture)</div>
+                    <div class="service-price">€400</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-category" id="orthodontics">
+            <h3 class="category-title">Orthodontics</h3>
+            <div class="price-grid">
+                <div class="price-item">
+                    <div class="service-name">Braces Consultation with Orthodontist</div>
+                    <div class="service-price">FREE</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Braces Consultation + Panoramic X-Ray</div>
+                    <div class="service-price">€50</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Gypsum Study Models</div>
+                    <div class="service-price">€60</div>
+                </div>
+                <div class="price-item service-group-header">
+                    <div class="service-name"><strong>Acrylic Device (For Kids)</strong></div>
+                    <div class="service-price"></div>
+                </div>
+                <div class="price-item indented">
+                    <div class="service-name">Treatment (2 arches)</div>
+                    <div class="service-price">€500–€900</div>
+                </div>
+                <div class="price-item indented">
+                    <div class="service-name">Maintenance</div>
+                    <div class="service-price">€100</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Night-Guard</div>
+                    <div class="service-price">€250–€300</div>
+                </div>
+            </div>
+
+            <h4 class="subcategory-title">FIXED METAL BRACES</h4>
+            <div class="price-grid">
+                <div class="price-item">
+                    <div class="service-name">Installation (Per Arch)</div>
+                    <div class="service-price">€350</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Control Visit Every 4-5 Weeks (One arch)</div>
+                    <div class="service-price">€100</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Control Visit Every 4-5 Weeks (Two arches)</div>
+                    <div class="service-price">€150</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Removing Braces + Retainers (One arch)</div>
+                    <div class="service-price">€250</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Removing Braces + Retainers (Two arches)</div>
+                    <div class="service-price">€350</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Fixed Cementation Retainer Bar (Per arch)</div>
+                    <div class="service-price">€250</div>
+                </div>
+            </div>
+
+            <h4 class="subcategory-title">REMOVABLE Appliances (Acrylic Plate)</h4>
+            <div class="price-grid">
+                <div class="price-item">
+                    <div class="service-name">One Arch</div>
+                    <div class="service-price">€400</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Two Arches</div>
+                    <div class="service-price">€600</div>
+                </div>
+            </div>
+
+            <div class="price-grid">
+                <div class="price-item">
+                    <div class="service-name">Removable Retainer</div>
+                    <div class="service-price">€200</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Fix Full Retainer (current ortho patients) - One arch</div>
+                    <div class="service-price">€150</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Fix Full Retainer (new/referrer patients) - One arch</div>
+                    <div class="service-price">€180</div>
+                </div>
+            </div>
+
+            <h4 class="subcategory-title">Clear Aligners Analysis</h4>
+            <div class="price-grid">
+                <div class="price-item">
+                    <div class="service-name">≤ 5 Trays</div>
+                    <div class="service-price">€1500</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">6 - 10 Trays</div>
+                    <div class="service-price">€2000</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">11+ Trays</div>
+                    <div class="service-price">€2500</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Retreatment</div>
+                    <div class="service-price">€1000</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-category" id="pediatric">
+            <h3 class="category-title">Pediatric (Children Under 13)</h3>
+            <div class="price-grid">
+                <div class="price-item">
+                    <div class="service-name">Children Exam</div>
+                    <div class="service-price">€40</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Cleaning & Polishing</div>
+                    <div class="service-price">€60</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Milk Tooth Filling</div>
+                    <div class="service-price">From €60–€120</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Milk Tooth Extraction</div>
+                    <div class="service-price">From €70–€90</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Root Canal (Milk Tooth)</div>
+                    <div class="service-price">From €120</div>
+                </div>
+                <div class="price-item">
+                    <div class="service-name">Sealant (each tooth)</div>
+                    <div class="service-price">€40</div>
+                </div>
+            </div>
+        </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <div class="about-content">
+            <p>At Dublin Dentist Clinic, we are dedicated to providing high-quality dental care in a comfortable and welcoming environment. Our experienced team uses the latest technology to ensure the best outcomes for our patients. We provide general and specialist dental services to private and PRSI patients.</p>
+            <div class="features">
+                <div class="feature">
+                    <h4>Experienced Team</h4>
+                    <p>Highly qualified dentists and staff</p>
+                </div>
+                <div class="feature">
+                    <h4>Modern Equipment</h4>
+                    <p>State-of-the-art dental technology</p>
+                </div>
+                <div class="feature">
+                    <h4>Patient-Centered</h4>
+                    <p>Your comfort is our priority</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-info">
+            <div class="info-item">
+                <h4>Address</h4>
+                <p>43 Lower Dorset Street<br>Dublin 1, Ireland</p>
+            </div>
+            <div class="info-item">
+                <h4>Phone</h4>
+                <p>087 909 8400</p>
+            </div>
+            <div class="info-item">
+                <h4>Email</h4>
+                <p>Dublindentist.ie@gmail.com</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="location" class="location">
+        <h2>Our Location</h2>
+        <div class="location-image">
+            <img src="{% static 'images/4.jpg' %}" alt="Dublin Dentist Clinic Location">
+        </div>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d420.91036450358484!2d-6.260788494993991!3d53.360030681866604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48670e7cf3d8bae7%3A0x7e6b1a5ad7d33b94!2sDublin-Dentist%20Clinic!5e0!3m2!1sen!2sie!4v1760709991037!5m2!1sen!2sie" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Dublin Dentist Clinic. All rights reserved. | <a href="{% url 'appointments:privacy_policy' %}" style="color: #3498db;">Privacy Policy</a></p>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/message/G3Y4QPEYUSHVB1" target="_blank" class="whatsapp-float" aria-label="Contact us on WhatsApp">
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <path fill="currentColor" d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.467c-2.482 0-4.908-0.646-7.07-1.87l-0.507-0.292-5.247 1.417 1.431-5.173-0.312-0.53c-1.331-2.247-2.036-4.82-2.036-7.413 0-8.039 6.561-14.6 14.6-14.6s14.6 6.561 14.6 14.6-6.561 14.6-14.6 14.6zM21.443 18.849c-0.261-0.131-1.541-0.762-1.781-0.849s-0.411-0.131-0.586 0.131c-0.175 0.261-0.674 0.849-0.825 1.024s-0.304 0.196-0.565 0.065c-0.261-0.131-1.102-0.406-2.098-1.294-0.775-0.691-1.299-1.545-1.451-1.807s-0.016-0.402 0.115-0.533c0.118-0.118 0.261-0.304 0.392-0.456s0.175-0.261 0.261-0.436c0.087-0.175 0.044-0.327-0.022-0.458s-0.586-1.413-0.803-1.936c-0.211-0.509-0.425-0.44-0.586-0.448-0.152-0.007-0.327-0.009-0.501-0.009s-0.456 0.065-0.695 0.327c-0.239 0.261-0.912 0.892-0.912 2.176s0.934 2.525 1.065 2.699c0.131 0.175 1.846 2.82 4.473 3.952 0.625 0.269 1.113 0.429 1.493 0.549 0.627 0.2 1.198 0.171 1.649 0.104 0.503-0.075 1.541-0.631 1.758-1.239s0.218-1.13 0.152-1.239c-0.065-0.109-0.239-0.175-0.501-0.305z"/>
+        </svg>
+    </a>
+
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

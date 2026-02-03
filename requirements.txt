@@ -1,0 +1,16 @@
+# Django Core Framework
+Django==5.2.6
+
+# Google Calendar Integration
+google-api-python-client==2.108.0
+google-auth-httplib2==0.2.0
+google-auth-oauthlib==1.2.0
+
+# HTTP Requests (for Doctor Platform API)
+requests==2.32.4
+
+# Date/Time Handling (required by Django when USE_TZ=True)
+pytz==2025.2
+
+# Production Server (uncomment if deploying with Gunicorn)
+# gunicorn==23.0.0

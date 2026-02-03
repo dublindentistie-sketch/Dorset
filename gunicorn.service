@@ -1,0 +1,26 @@
+[Unit]
+Description=Gunicorn daemon for dental clinic Django application
+After=network.target
+
+[Service]
+Type=notify
+User=www-data
+Group=www-data
+WorkingDirectory=/var/www/dental-clinic
+Environment="PATH=/var/www/dental-clinic/venv/bin"
+Environment="DJANGO_SETTINGS_MODULE=dental_clinic.settings_production"
+ExecStart=/var/www/dental-clinic/venv/bin/gunicorn \
+          --workers 3 \
+          --bind unix:/var/www/dental-clinic/gunicorn.sock \
+          --timeout 300 \
+          --access-logfile /var/www/dental-clinic/logs/gunicorn-access.log \
+          --error-logfile /var/www/dental-clinic/logs/gunicorn-error.log \
+          --log-level info \
+          dental_clinic.wsgi:application
+
+# 自动重启
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target
