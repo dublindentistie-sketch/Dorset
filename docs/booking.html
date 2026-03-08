@@ -1,12 +1,11 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Appointment - Dublin Dentist Clinic</title>
-    <link rel="icon" type="image/jpeg" href="{% static 'images/favicon.jpg' %}">
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="icon" type="image/jpeg" href="static/images/favicon.jpg">
+    <link rel="stylesheet" href="static/css/styles.css">
     <style>
         .booking-page {
             min-height: 100vh;
@@ -158,7 +157,7 @@
     <header>
         <nav>
             <div class="logo">
-                <img src="{% static 'images/favicon.jpg' %}" alt="Logo" class="logo-icon">
+                <img src="static/images/favicon.jpg" alt="Logo" class="logo-icon">
                 <h1>Dublin Dentist Clinic</h1>
             </div>
             <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
@@ -167,12 +166,12 @@
                 <span></span>
             </button>
             <ul class="nav-links" id="navLinks">
-                <li><a href="{% url 'appointments:home' %}">Home</a></li>
-                <li><a href="{% url 'appointments:home' %}#services">Pricing</a></li>
-                <li><a href="{% url 'appointments:home' %}#about">About</a></li>
-                <li><a href="{% url 'appointments:home' %}#location">Location</a></li>
-                <li><a href="{% url 'appointments:home' %}#contact">Contact</a></li>
-                <li style="display: none;"><a href="{% url 'appointments:booking' %}" class="btn-booking">Book Appointment</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#services">Pricing</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#location">Location</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li style="display: none;"><a href="booking.html" class="btn-booking">Book Appointment</a></li>
             </ul>
         </nav>
     </header>
@@ -271,7 +270,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2025 Dublin Dentist Clinic. All rights reserved. | <a href="{% url 'appointments:privacy_policy' %}" style="color: #3498db;">Privacy Policy</a></p>
+        <p>&copy; 2025 Dublin Dentist Clinic. All rights reserved. | <a href="privacy-policy.html" style="color: #3498db;">Privacy Policy</a></p>
     </footer>
 
     <a href="https://wa.me/message/G3Y4QPEYUSHVB1" target="_blank" class="whatsapp-float" aria-label="Contact us on WhatsApp">
@@ -280,7 +279,7 @@
         </svg>
     </a>
 
-    <script src="{% static 'js/script.js' %}"></script>
+    <script src="static/js/script.js"></script>
     <script>
         // Set minimum date to today
         const dateInput = document.getElementById('appointmentDate');
@@ -319,20 +318,12 @@
             const messageDiv = document.getElementById('formMessage');
 
             try {
-                const response = await fetch('{% url "appointments:create_appointment" %}', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'X-CSRFToken': '{{ csrf_token }}'
-                    },
-                    body: JSON.stringify(formData)
-                });
-
-                const data = await response.json();
+                /* form mock */
+                const data = { success: true, message: 'Thank you! Your appointment request has been received. We will contact you within 24 hours to confirm your booking.' };
 
                 if (data.success) {
                     messageDiv.className = 'form-message success';
-                    messageDiv.textContent = 'Thank you! Your appointment request has been received. We will contact you within 24 hours to confirm your booking.';
+                    messageDiv.textContent = data.message;
                     document.getElementById('bookingForm').reset();
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                 } else {

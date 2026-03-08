@@ -1,18 +1,17 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dublin Dentist Clinic</title>
-    <link rel="icon" type="image/jpeg" href="{% static 'images/favicon.jpg' %}">
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="icon" type="image/jpeg" href="static/images/favicon.jpg">
+    <link rel="stylesheet" href="static/css/styles.css">
 </head>
 <body>
     <header>
         <nav>
             <div class="logo">
-                <img src="{% static 'images/favicon.jpg' %}" alt="Logo" class="logo-icon">
+                <img src="static/images/favicon.jpg" alt="Logo" class="logo-icon">
                 <h1>Dublin Dentist Clinic</h1>
             </div>
             <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
@@ -26,7 +25,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#location">Location</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li style="display: none;"><a href="{% url 'appointments:booking' %}" class="btn-booking">Book Appointment</a></li>
+                <li style="display: none;"><a href="booking.html" class="btn-booking">Book Appointment</a></li>
             </ul>
         </nav>
     </header>
@@ -35,7 +34,7 @@
         <div class="hero-content">
             <h1>Welcome to Dublin Dentist Clinic</h1>
             <p>Your smile is our priority. Book your appointment today and experience quality dental care.</p>
-            <a href="{% url 'appointments:booking' %}" class="btn-hero" style="display: none;">Book Appointment</a>
+            <a href="booking.html" class="btn-hero" style="display: none;">Book Appointment</a>
         </div>
     </section>
 
@@ -550,7 +549,7 @@
     <section id="location" class="location">
         <h2>Our Location</h2>
         <div class="location-image">
-            <img src="{% static 'images/4.jpg' %}" alt="Dublin Dentist Clinic Location">
+            <img src="static/images/4.jpg" alt="Dublin Dentist Clinic Location">
         </div>
         <div class="map-container">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d420.91036450358484!2d-6.260788494993991!3d53.360030681866604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48670e7cf3d8bae7%3A0x7e6b1a5ad7d33b94!2sDublin-Dentist%20Clinic!5e0!3m2!1sen!2sie!4v1760709991037!5m2!1sen!2sie" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -558,7 +557,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2025 Dublin Dentist Clinic. All rights reserved. | <a href="{% url 'appointments:privacy_policy' %}" style="color: #3498db;">Privacy Policy</a></p>
+        <p>&copy; 2025 Dublin Dentist Clinic. All rights reserved. | <a href="privacy-policy.html" style="color: #3498db;">Privacy Policy</a></p>
     </footer>
 
     <!-- WhatsApp Float Button -->
@@ -568,6 +567,6 @@
         </svg>
     </a>
 
-    <script src="{% static 'js/script.js' %}"></script>
+    <script src="static/js/script.js"></script>
 </body>
 </html>
